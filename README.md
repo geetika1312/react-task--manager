@@ -1,5 +1,6 @@
-#Task Manager Application
-📌 Overview
+# Task Manager Application
+
+# Overview
 
 The Task Manager Application is a modern web application designed to help users efficiently organize and manage their tasks. The app provides a clean and intuitive interface where users can create, update, and manage tasks while maintaining productivity.
 
@@ -7,7 +8,7 @@ The project focuses on building a fast, responsive, and user-friendly task manag
 
 This application was built using React with Vite for fast development and Tailwind CSS for styling, along with several modern libraries for UI components, form handling, and drag-and-drop functionality.
 
-🚀 Features
+# Features
 Task Management
 
 Create new tasks
@@ -48,7 +49,7 @@ Fast development and build process using Vite
 
 Optimized rendering with React
 
-🛠️ Tech Stack
+# Tech Stack
 Frontend
 
 React
@@ -75,23 +76,6 @@ Axios – API requests
 
 Framer Motion – Animations
 
-📂 Project Structure
-task-manager
-│
-├── src
-│   ├── components        # Reusable UI components
-│   ├── pages             # Application pages
-│   ├── hooks             # Custom React hooks
-│   ├── lib               # Utility functions
-│   ├── assets            # Images and static assets
-│   ├── App.tsx           # Main application component
-│   └── main.tsx          # Entry point
-│
-├── public                # Static public files
-├── index.html
-├── package.json
-├── vite.config.ts
-└── README.md
 ⚙️ Running the Project Locally
 1. Clone the repository
 git clone https://github.com/your-username/task-manager.git
@@ -117,7 +101,8 @@ npm run dev
 Visit:
 
 http://localhost:5173
-🏗️ Build for Production
+
+# Build for Production
 
 To create a production build:
 
