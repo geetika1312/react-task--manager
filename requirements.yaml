@@ -1,0 +1,17 @@
+packages:
+  "axios": "For API requests to JSONPlaceholder"
+  "react-router-dom": "For standard frontend routing as requested"
+  "date-fns": "For date formatting and overdue checks"
+  "framer-motion": "For smooth layout animations and interactions"
+  "clsx": "For conditional class name merging"
+  "tailwind-merge": "For conflict-free Tailwind class application"
+  "lucide-react": "For beautiful consistent SVG icons"
+
+images:
+  - path: "artifacts/task-manager/public/images/logo.png"
+    description: "Minimalist modern geometric logo mark for a task management app, layered intersecting shapes, vibrant electric blue and violet gradient, solid transparent background"
+    aspect_ratio: "1:1"
+
+notes:
+  - "App uses purely local state management synced with localStorage for a robust offline-first feel, initially populated from JSONPlaceholder API."
+  - "Replaced wouter with react-router-dom per instructions."
