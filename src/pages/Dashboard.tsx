@@ -9,6 +9,20 @@ export function Dashboard() {
   const { deleteTask } = useTasks();
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [taskToDelete, setTaskToDelete] = useState<number | null>(null);
+  const [deleteStatus, setDeleteStatus] = useState<'idle' | 'deleting' | 'deleted'>('idle');
+
+  const handleDelete = async (id: number) => {
+  setDeleteStatus('deleting');
+
+  await deleteTask(id);
+
+  setTaskToDelete(null);
+  setDeleteStatus('deleted');
+
+  setTimeout(() => {
+    setDeleteStatus('idle');
+  }, 2000);
+};
 
   return (
     // Full viewport height, flex column, no overflow — only the inner list scrolls
@@ -32,8 +46,30 @@ export function Dashboard() {
       <DeleteModal
         taskId={taskToDelete}
         onClose={() => setTaskToDelete(null)}
-        onConfirm={(id) => deleteTask(id)}
+        // onConfirm={(id) => deleteTask(id)}
+        onConfirm={handleDelete}
       />
+      {deleteStatus !== 'idle' && (
+  <div className="fixed bottom-6 right-6 z-50">
+    <div className="px-4 py-2 rounded-lg shadow-lg text-sm font-medium bg-card border border-border flex items-center gap-2">
+      
+      {deleteStatus === 'deleting' && (
+        <>
+          <span className="animate-pulse">⏳</span>
+          Deleting task...
+        </>
+      )}
+
+      {deleteStatus === 'deleted' && (
+        <>
+          <span className="text-green-500">✓</span>
+          Task deleted
+        </>
+      )}
+
+    </div>
+  </div>
+)}
     </div>
   );
 }

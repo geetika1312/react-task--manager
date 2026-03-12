@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useTasks } from '../hooks/useTasks';
-import { ArrowLeft, Save, Hash , CheckCircle2, Calendar } from 'lucide-react';
+import { ArrowLeft, Save, Hash, CheckCircle2, Calendar } from 'lucide-react';
 import { StatusSelect, PrioritySelect, DateSelect } from '../components/InlineSelect';
 import { isBefore, startOfDay } from 'date-fns';
 
@@ -15,6 +15,7 @@ export function TaskDetails() {
   const [title, setTitle] = useState(task?.title || '');
   const [description, setDescription] = useState(task?.description || '');
   const [isSaving, setIsSaving] = useState(false);
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
 
   useEffect(() => {
     if (task) {
@@ -46,11 +47,19 @@ export function TaskDetails() {
 
   const handleSave = async () => {
     setIsSaving(true);
+    setSaveStatus('saving');
+
     await updateTask(task.id, {
       title: title.trim() || task.title,
       description,
     });
+
     setIsSaving(false);
+    setSaveStatus('saved');
+
+    setTimeout(() => {
+      setSaveStatus('idle');
+    }, 2000);
   };
 
   return (
@@ -155,6 +164,25 @@ export function TaskDetails() {
           </div>
         </div>
       </div>
+      {saveStatus !== 'idle' && (
+        <div className="fixed bottom-6 right-6 z-50">
+          <div className="px-4 py-2 rounded-lg shadow-lg text-sm font-medium bg-card border border-border flex items-center gap-2">
+            {saveStatus === 'saving' && (
+              <>
+                <Save className="w-4 h-4 animate-pulse" />
+                Saving...
+              </>
+            )}
+
+            {saveStatus === 'saved' && (
+              <>
+                <CheckCircle2 className="w-4 h-4 text-green-500" />
+                Saved successfully
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
