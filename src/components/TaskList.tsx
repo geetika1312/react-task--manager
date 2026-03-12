@@ -1,4 +1,3 @@
-import React from 'react';
 import { TaskRow } from './TaskRow';
 import { useTasks } from '../hooks/useTasks';
 import { Inbox, Loader2 } from 'lucide-react';
@@ -67,8 +66,10 @@ export function TaskList({ onDeleteTask }: { onDeleteTask: (id: number) => void 
   const showLoadMore = filteredTasks.length >= 20 && hasMore;
 
   return (
-    <div>
-      {/* Column headers — sticky at top-0 within the scrollable container */}
+  <div className="w-full overflow-x-auto">
+    <div className="min-w-[700px]">
+
+      {/* Column headers */}
       <div className="grid grid-cols-[32px_28px_minmax(180px,1fr)_155px_120px_155px_44px] gap-2 px-3 py-2.5 text-xs font-semibold text-muted-foreground uppercase tracking-wider border border-border bg-card/60 sticky top-0 z-20 backdrop-blur-md rounded-t-lg">
         <div />
         <div />
@@ -96,28 +97,8 @@ export function TaskList({ onDeleteTask }: { onDeleteTask: (id: number) => void 
           </div>
         </SortableContext>
       </DndContext>
-
-      {/* Load More — only shown when ≥20 filtered results exist and more are available */}
-      {showLoadMore && (
-        <div className="flex justify-center py-6">
-          <button
-            onClick={loadMoreTasks}
-            disabled={loadingMore}
-            className="flex items-center gap-2 px-6 py-2.5 rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-white/5 transition-all disabled:opacity-60 shadow-sm"
-          >
-            {loadingMore
-              ? <><Loader2 className="w-4 h-4 animate-spin" />Loading...</>
-              : <>Load More Tasks</>
-            }
-          </button>
-        </div>
-      )}
-
-      {!hasMore && filteredTasks.length > 0 && (
-        <p className="text-center text-xs text-muted-foreground py-4 opacity-50">
-          All tasks loaded · {filteredTasks.length} total
-        </p>
-      )}
+      {/* Load More — only shown when ≥20 filtered results exist and more are available */} {showLoadMore && ( <div className="flex justify-center py-6"> <button onClick={loadMoreTasks} disabled={loadingMore} className="flex items-center gap-2 px-6 py-2.5 rounded-xl border border-border bg-card text-sm font-medium text-foreground hover:bg-white/5 transition-all disabled:opacity-60 shadow-sm" > {loadingMore ? <><Loader2 className="w-4 h-4 animate-spin" />Loading...</> : <>Load More Tasks</> } </button> </div> )} {!hasMore && filteredTasks.length > 0 && ( <p className="text-center text-xs text-muted-foreground py-4 opacity-50"> All tasks loaded · {filteredTasks.length} total </p> )}
     </div>
-  );
+  </div>
+);
 }

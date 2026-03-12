@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { NavLink } from 'react-router-dom';
 import { LayoutDashboard, CheckSquare, Settings, Users, Bell, Search, Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TopBar } from '../components/TopBar';
 import { TaskList } from '../components/TaskList';
 import { AddTaskModal } from '../components/AddTaskModal';

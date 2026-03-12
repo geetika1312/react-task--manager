@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Trash2, GripVertical } from 'lucide-react';
 import { isBefore, startOfDay } from 'date-fns';
