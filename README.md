@@ -1,148 +1,45 @@
-# Task Manager Application
+# Task Manager App
 
-# Overview
+A modern **Task Management Application** built with **React (v18+)**, designed to manage tasks efficiently with a clean and responsive UI.
 
-The Task Manager Application is a modern web application designed to help users efficiently organize and manage their tasks. The app provides a clean and intuitive interface where users can create, update, and manage tasks while maintaining productivity.
+---
 
-The project focuses on building a fast, responsive, and user-friendly task management system using modern frontend technologies.
+## 🛠 Built With
 
-This application was built using React with Vite for fast development and Tailwind CSS for styling, along with several modern libraries for UI components, form handling, and drag-and-drop functionality.
+- **React (v18+)** — Functional components with Hooks (`useState`, `useEffect`, `useContext`)
+- **REST API Integration** — Axios for HTTP requests, handling loading and error states
+- **State Management** — `useState` and `useContext` for global state
+- **Styling** — Tailwind CSS for utility-first, responsive design
+- **Routing** — React Router v6 with at least two routes:
+  - Task List View
+  - Task Detail / Edit View
+- **Project Scaffolding** — Vite (preferred) for fast development
+- **Additional Libraries**:
+  - `@dnd-kit` for drag-and-drop functionality
+  - `@radix-ui` components for accessible UI primitives
+  - `react-query` for API state management
+  - `framer-motion` for animations
+  - `lucide-react` for icons
 
-# Features
-Task Management
+---
 
-Create new tasks
+## ⚡ Features
 
-Edit existing tasks
+- View a list of tasks
+- Create, edit, and delete tasks
+- Drag-and-drop tasks to reorder
+- Loading and error states while fetching data
+- Responsive design for desktop, tablet, and mobile
+- Modular, reusable components
 
-Delete tasks
+---
 
-Organize tasks efficiently
+## 🚀 Getting Started
 
-Drag and Drop
+Follow these steps to run the project locally:
 
-Rearrange tasks using drag-and-drop functionality
+### 1. Clone the Repository
 
-Smooth task movement using DnD Kit
-
-Responsive UI
-
-Fully responsive layout
-
-Works across desktop, tablet, and mobile devices
-
-Modern UI Components
-
-Accessible UI components powered by Radix UI
-
-Smooth animations and transitions
-
-Form Handling
-
-Efficient form validation using React Hook Form
-
-Performance
-
-Fast development and build process using Vite
-
-Optimized rendering with React
-
-# Tech Stack
-Frontend
-
-React
-
-TypeScript
-
-Vite
-
-Tailwind CSS
-
-Libraries
-
-DnD Kit – Drag and drop functionality
-
-React Hook Form – Form management
-
-TanStack React Query – Data fetching and caching
-
-Radix UI – Accessible UI components
-
-Axios – API requests
-
-Framer Motion – Animations
-
-⚙️ Running the Project Locally
-1. Clone the repository
-git clone https://github.com/your-username/task-manager.git
-2. Navigate to the project folder
+```bash
+git clone https://github.com/<your-username>/task-manager.git
 cd task-manager
-3. Install dependencies
-
-If you are using pnpm:
-
-pnpm install
-
-Or with npm:
-
-npm install
-4. Start the development server
-pnpm run dev
-
-or
-
-npm run dev
-5. Open the application
-
-Visit:
-
-http://localhost:5173
-
-# Build for Production
-
-To create a production build:
-
-pnpm run build
-
-Preview production build:
-
-pnpm run preview
-🔮 What I Would Improve With More Time
-
-If more development time were available, several improvements could enhance the application:
-
-1. User Authentication
-
-Implement login and signup functionality
-
-Allow users to manage their personal task boards
-
-2. Backend Integration
-
-Add a backend (Node.js / Express / Firebase)
-
-Store tasks in a database
-
-Enable persistent task storage
-
-3. Task Categories and Labels
-
-Add task categories
-
-Allow filtering tasks by status or label
-
-4. Deadlines and Notifications
-
-Add due dates for tasks
-
-Implement reminders and notifications
-
-5. Collaboration Features
-
-Allow multiple users to collaborate on tasks
-
-Real-time updates for team productivity
-
-6. Dark / Light Theme Toggle
-
-Allow users to switch between themes
