@@ -1,7 +1,5 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { TaskProvider } from './context/TaskContext';
@@ -23,7 +21,6 @@ export default function App() {
             </Routes>
           </BrowserRouter>
         </TaskProvider>
-        <Toaster />
       </TooltipProvider>
     </QueryClientProvider>
   );

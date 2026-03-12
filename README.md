@@ -41,8 +41,6 @@ Form Handling
 
 Efficient form validation using React Hook Form
 
-Schema validation with Zod
-
 Performance
 
 Fast development and build process using Vite
@@ -65,8 +63,6 @@ Libraries
 DnD Kit – Drag and drop functionality
 
 React Hook Form – Form management
-
-Zod – Schema validation
 
 TanStack React Query – Data fetching and caching
 
