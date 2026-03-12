@@ -43,3 +43,44 @@ Follow these steps to run the project locally:
 ```bash
 git clone https://github.com/<your-username>/task-manager.git
 cd task-manager
+
+### 2. Install Dependencies
+
+```bash
+npm install
+
+### 3. Start Development Server
+npm run dev
+
+Open your browser and navigate to http://localhost:5173
+ (default Vite port).
+
+### 4. Build for Production
+npm run build
+
+Preview the production build:
+
+npm run preview
+
+## 📁 Project Structure
+src/
+├─ components/        # Reusable React components (TaskList, TaskItem, Modals)
+├─ hooks/             # Custom hooks (useTasks)
+├─ pages/             # Pages for routing (Dashboard, TaskDetail)
+├─ context/           # Context API setup for state management
+├─ assets/            # Images and static assets
+├─ App.jsx            # Main App component
+├─ main.jsx           # Entry point
+├─ index.css          # Tailwind CSS imports
+
+## 💡 Improvements with More Time
+
+Authentication & User Accounts — Add login/signup functionality
+
+Backend Integration — Fully functional API for persistent task storage
+
+Search & Filter — Search tasks by title or category
+
+Dark Mode Toggle — Light/dark theme support
+
+Notifications — Reminders for due tasks
